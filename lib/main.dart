@@ -27,7 +27,7 @@ class MyHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Latihan Container", style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: const Color.fromARGB(255, 0, 169, 254),
         actions: [
           Icon(Icons.person, color: Colors.white),
           SizedBox(width: 10),
