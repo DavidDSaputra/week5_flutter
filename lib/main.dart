@@ -37,6 +37,7 @@ class MyHome extends StatelessWidget {
           SizedBox(width: 20),
         ],
       ),
+      body: Text( "Hallo ini latihan container"),
     );
   }
 }
