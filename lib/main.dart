@@ -12,6 +12,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Demo",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Home'),
+        ),
+        body: const Center(
+          child: Text(
+            'Selamat datang di Home!',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+      ),
     );
   }
 }
