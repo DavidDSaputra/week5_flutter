@@ -38,7 +38,10 @@ class MyHome extends StatelessWidget {
         ],
       ),
       body: Container(
-      color: Colors.amber),
+      alignment: Alignment.center,
+      color: Colors.amber,
+      child: Text("Ini adalah text didalam body"),
+      )
     );
   }
 }
