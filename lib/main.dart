@@ -58,6 +58,36 @@ class HomePage extends StatelessWidget {
 				backgroundColor: Colors.blueAccent,
 				actions: [
 					IconButton(
+						icon: const Icon(Icons.person),
+						color: Colors.white,
+						tooltip: 'Profile',
+						onPressed: () {
+							ScaffoldMessenger.of(context).showSnackBar(
+								const SnackBar(content: Text('Profile tapped')),
+							);
+						},
+					),
+					IconButton(
+						icon: const Icon(Icons.park),
+						color: Colors.white,
+						tooltip: 'Tree',
+						onPressed: () {
+							ScaffoldMessenger.of(context).showSnackBar(
+								const SnackBar(content: Text('Tree tapped')),
+							);
+						},
+					),
+					IconButton(
+						icon: const Icon(Icons.ac_unit),
+						color: Colors.white,
+						tooltip: 'AC Unit',
+						onPressed: () {
+							ScaffoldMessenger.of(context).showSnackBar(
+								const SnackBar(content: Text('AC Unit tapped')),
+							);
+						},
+					),
+					IconButton(
 						icon: const Icon(Icons.search),
 						tooltip: 'Search',
 						onPressed: () {
