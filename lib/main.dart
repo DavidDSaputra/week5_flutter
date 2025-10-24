@@ -1,119 +1,42 @@
 import 'package:flutter/material.dart';
 
 void main() {
-	runApp(const MyApp());
+  runApp(MyApp());
 }
 
+// Methode MyApp
 class MyApp extends StatelessWidget {
-	const MyApp({super.key});
+  const MyApp({super.key});
 
-	@override
-	Widget build(BuildContext context) {
-		return const MaterialApp(
-			debugShowCheckedModeBanner: false,
-			title: 'Flutter Demo',
-			home: HomePage(),
-		);
-	}
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Membuat aplikasi baru",
+      home: MyHome(),
+    );
+  }
 }
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-	final String title;
-	final List<Widget>? actions;
-	final Color? backgroundColor;
-	final bool centerTitle;
+// method MyHome
+class MyHome extends StatelessWidget {
+  const MyHome({super.key});
 
-	const MyAppBar({
-		super.key,
-		required this.title,
-		this.actions,
-		this.backgroundColor,
-		this.centerTitle = false,
-	});
-
-	@override
-	Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
-	@override
-	Widget build(BuildContext context) {
-		return AppBar(
-			title: Text(title),
-			centerTitle: centerTitle,
-			backgroundColor: backgroundColor,
-			actions: actions,
-			elevation: 2,
-		);
-	}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Latihan Container", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blueGrey,
+        actions: [
+          Icon(Icons.person, color: Colors.white),
+          SizedBox(width: 10),
+          Icon(Icons.account_tree, color: Colors.white),
+          SizedBox(width: 10),
+          Icon(Icons.ac_unit, color: Colors.white),
+          SizedBox(width: 20),
+        ],
+      ),
+    );
+  }
 }
-
-class HomePage extends StatelessWidget {
-	const HomePage({super.key});
-
-	@override
-	Widget build(BuildContext context) {
-		return Scaffold(
-			appBar: MyAppBar(
-				title: 'Home',
-				centerTitle: true,
-				backgroundColor: Colors.blueAccent,
-				actions: [
-					IconButton(
-						icon: const Icon(Icons.person),
-						color: Colors.white,
-						tooltip: 'Profile',
-						onPressed: () {
-							ScaffoldMessenger.of(context).showSnackBar(
-								const SnackBar(content: Text('Profile tapped')),
-							);
-						},
-					),
-					IconButton(
-						icon: const Icon(Icons.park),
-						color: Colors.white,
-						tooltip: 'Tree',
-						onPressed: () {
-							ScaffoldMessenger.of(context).showSnackBar(
-								const SnackBar(content: Text('Tree tapped')),
-							);
-						},
-					),
-					IconButton(
-						icon: const Icon(Icons.ac_unit),
-						color: Colors.white,
-						tooltip: 'AC Unit',
-						onPressed: () {
-							ScaffoldMessenger.of(context).showSnackBar(
-								const SnackBar(content: Text('AC Unit tapped')),
-							);
-						},
-					),
-					IconButton(
-						icon: const Icon(Icons.search),
-						tooltip: 'Search',
-						onPressed: () {
-							ScaffoldMessenger.of(context).showSnackBar(
-								const SnackBar(content: Text('Search tapped')),
-							);
-						},
-					),
-					IconButton(
-						icon: const Icon(Icons.settings),
-						tooltip: 'Settings',
-						onPressed: () {
-							ScaffoldMessenger.of(context).showSnackBar(
-								const SnackBar(content: Text('Settings tapped')),
-							);
-						},
-					),
-				],
-			),
-			body: const Center(
-				child: Text(
-					'Selamat datang di Home!',
-					style: TextStyle(fontSize: 24),
-				),
-			),
-		);
-	}
-}
-
