@@ -81,13 +81,9 @@ class MyHome extends StatelessWidget {
               margin: EdgeInsets.all(15),
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color.fromARGB(255, 0, 195, 255),
-                    Color.fromARGB(255, 255, 238, 0),
-                  ],
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
+              image: DecorationImage(
+                  image: AssetImage("assets/images/bbbgempa.png"),
+                  fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(12),
               ),
