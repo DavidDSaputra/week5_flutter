@@ -4,7 +4,6 @@ void main() {
   runApp(MyApp());
 }
 
-// Methode MyApp
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -12,13 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Membuat aplikasi baru",
+      title: "Latihan Container",
       home: MyHome(),
     );
   }
 }
 
-// method MyHome
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
 
@@ -26,22 +24,26 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Latihan Container", style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color.fromARGB(255, 0, 169, 254),
+        title: Text("Latihan Container"),
+        backgroundColor: Colors.blue,
         actions: [
           Icon(Icons.person, color: Colors.white),
           SizedBox(width: 10),
-          Icon(Icons.account_tree, color: Colors.white),
-          SizedBox(width: 10),
-          Icon(Icons.ac_unit, color: Colors.white),
+          Icon(Icons.account_tree),
+          Icon(Icons.ac_unit),
           SizedBox(width: 20),
         ],
       ),
       body: Container(
-      alignment: Alignment.center,
-      color: Colors.amber,
-      child: Text("Ini adalah text didalam body"),
-      )
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(top: 20),
+
+        decoration: BoxDecoration(
+          color: Colors.yellow,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Text("Ini adalah teks di dalam container"),
+      ),
     );
   }
 }
